@@ -33,7 +33,8 @@ namespace VSU.Identity.API
             services.AddDefaultIdentity<IdentityUser>()
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>()
-                .AddDefaultTokenProviders();
+                .AddDefaultTokenProviders()
+                .AddErrorDescriber<IdentityMessagesPt>();
 
             var appSettingsSection = Configuration.GetSection("AppSettings");
 
